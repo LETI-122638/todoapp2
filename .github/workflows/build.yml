@@ -27,4 +27,5 @@ jobs:
         with:
           name: app-jar
           path: |
-            target/*.jar # (d) Publica todos os ficheiros .jar da pasta target
+            target/**/*.jar
+            target/**/*.jar.original
