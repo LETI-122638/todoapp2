@@ -1,6 +1,9 @@
-# Todoapp README
+# Projeto de Engenharis de Swoftware
 
-- [ ] TODO Replace or update this README with instructions relevant to your application
+- António Moura - 122622
+- Gonçalo Batista - 122623
+- Afonso Lopes- 122631
+- Rafael Silva - 122638
 
 ## Project Structure
 
@@ -9,7 +12,7 @@ The sources of your Todoapp have the following structure:
 ```
 src
 ├── main/frontend
-│   └── themes
+│   └── themes  
 │       └── default
 │           ├── styles.css
 │           └── theme.json
