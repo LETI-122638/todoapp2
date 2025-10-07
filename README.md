@@ -7,9 +7,8 @@
 
 
 
-### D.6
 
-## Pipeline de Integração Contínua (GitHub Actions)
+## D.6 - Pipeline de Integração Contínua (GitHub Actions)
 
 Para automatizar o processo de compilação e empacotamento da aplicação, foi criada uma pipeline de Integração Contínua utilizando o GitHub Actions.  
 Esta pipeline permite gerar automaticamente o ficheiro `.jar` do projeto sempre que são realizadas alterações no ramo principal (`main`).
