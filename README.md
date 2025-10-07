@@ -1,4 +1,4 @@
-# Projeto de Engenharis de Swoftware
+# Projeto de Engenharia de Software
 
 - António Moura - 122622
 - Gonçalo Batista - 122623
