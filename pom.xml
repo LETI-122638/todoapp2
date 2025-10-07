@@ -59,11 +59,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         <!-- https://mvnrepository.com/artifact/com.github.librepdf/openpdf -->
+        </dependency>
         <dependency>
             <groupId>com.github.librepdf</groupId>
             <artifactId>openpdf</artifactId>
             <version>3.0.0</version>
         <!-- https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api -->
+        </dependency>
         <dependency>
             <groupId>jakarta.mail</groupId>
             <artifactId>jakarta.mail-api</artifactId>
