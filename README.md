@@ -1,9 +1,66 @@
-# Projeto de Engenharis de Swoftware
+# Vídeo de Demonstração da Aplicação
+https://youtu.be/HhxRMc92h4g
+
+
+# Projeto de Engenharia de Software
 
 - António Moura - 122622
 - Gonçalo Batista - 122623
 - Afonso Lopes- 122631
 - Rafael Silva - 122638
+
+
+
+
+## D.6 - Pipeline de Integração Contínua (GitHub Actions)
+
+Para automatizar o processo de compilação e empacotamento da aplicação, foi criada uma pipeline de Integração Contínua utilizando o GitHub Actions.  
+Esta pipeline permite gerar automaticamente o ficheiro `.jar` do projeto sempre que são realizadas alterações no ramo principal (`main`).
+
+### Funcionalidade da pipeline
+
+O workflow executa-se automaticamente sempre que ocorre um `push` para a branch `main`.  
+As suas principais etapas são as seguintes:
+
+1. **Checkout do código** – obtém o código-fonte do repositório através da ação `actions/checkout@v4`.
+2. **Configuração do ambiente Java** – instala o JDK 21 (Temurin) e ativa a cache de dependências Maven com `actions/setup-java@v4`.
+3. **Compilação e empacotamento** – executa o comando `mvn clean package`, que compila o projeto e gera o ficheiro `.jar` na pasta `target/`.
+4. **Publicação do artefacto** – utiliza `actions/upload-artifact@v4` para disponibilizar o `.jar` gerado como artefacto de build, acessível na interface do GitHub em Actions -> Artifacts.
+
+### Excerto do ficheiro `build.yml`
+```yaml
+name: Build and Package Java Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'
+
+      - name: Compilar e empacotar o projeto
+        run: mvn -B -V clean package
+
+      - name: Publicar artefacto .jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: target/**/*.jar
+```
+
+
 
 
 ## Project Structure
