@@ -39,6 +39,8 @@ public final class MainLayout extends AppLayout {
         var nav = new SideNav();
         nav.addClassNames(Margin.Horizontal.MEDIUM);
         MenuConfiguration.getMenuEntries().forEach(entry -> nav.addItem(createSideNavItem(entry)));
+        // Adiciona a aba para envio de email
+        nav.addItem(new SideNavItem("Enviar Email", "enviar-email", new Icon(VaadinIcon.ENVELOPE)));
         return nav;
     }
 
